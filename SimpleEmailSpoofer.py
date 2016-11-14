@@ -33,6 +33,7 @@ def get_args():
                                help="Filename containing a list of TO addresses")
     email_options.add_argument("-f", "--from", dest="from_address", help="Email address to send from")
     email_options.add_argument("-n", "--from_name", dest="from_name", help="From name")
+    email_options.add_argument("-r", "--reply_to", dest="reply_to", help="Reply-to header")
 
     email_options.add_argument("-j", "--subject", dest="subject", help="Subject for the email")
     email_options.add_argument("-e", "--email_filename", dest="email_filename",
@@ -221,6 +222,10 @@ if __name__ == "__main__":
         else:
             output_info("Setting From header to: " + args.from_address)
             msg["From"] = args.from_address
+
+        if args.reply_to is not None:
+            output_info("Setting Reply-to header to " + args.reply.to)
+            msg["Reply-to"] = args.reply_to
 
         if args.subject is not None:
             output_info("Setting Subject header to: " + args.subject)
