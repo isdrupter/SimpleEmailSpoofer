@@ -1,6 +1,9 @@
 # SimpleEmailSpoofer
 A few Python programs designed to help penetration testers with email spoofing.
 
+## What's new
+Added Reply-to headers.
+
 ## Setup
 
 ### Mail Server
@@ -34,7 +37,7 @@ These can be installed using pip:
 
 Add the desired contents of the email in HTML format to an HTML file. Then, execute the following command: 
 
-`./SimpleEmailSpoofer.py -e [Path to Email file] -t [To address] -f [From address] -n [From name] -j [Email subject]`
+`./SimpleEmailSpoofer.py -e [Path to Email file] -t [To address] -f [From address] -r [Reply-to] -n [From name] -j [Email subject]`
 
 Additional flags can be found by running
 
